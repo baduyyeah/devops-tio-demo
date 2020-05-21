@@ -1,6 +1,6 @@
-def CONTAINER_NAME="ben"
+def CONTAINER_NAME="devops-tio-demo"
 def CONTAINER_TAG="latest"
-def DOCKER_HUB_USER="tjscott"
+def DOCKER_HUB_USER="ben"
 def HTTP_PORT="5000"
 
 node {
