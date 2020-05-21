@@ -28,15 +28,15 @@ node {
         }
     }
 
-    stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
-        }
-    }
+    //stage('Push to Docker Registry'){
+    //    withCredentials([usernamePassword(credentialsId: 'dockerHubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+    //        pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
+     //   }
+  //  }
 
-    stage('Run App'){
-        withCredentials([usernamePassword(credentialsId: 'tenableApiCredentials', usernameVariable: 'TENABLE_ACCESS_KEY', passwordVariable: 'TENABLE_SECRET_KEY')]){
-            runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT, TENABLE_ACCESS_KEY, TENABLE_SECRET_KEY)
+ //   stage('Run App'){
+  //      withCredentials([usernamePassword(credentialsId: 'tenableApiCredentials', usernameVariable: 'TENABLE_ACCESS_KEY', passwordVariable: 'TENABLE_SECRET_KEY')]){
+  //          runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT, TENABLE_ACCESS_KEY, TENABLE_SECRET_KEY)
         }
     }
 
